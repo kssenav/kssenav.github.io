@@ -1,1 +1,59 @@
-Hello World
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta Importante</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #ffcccb;
+        }
+        .contenedor {
+            text-align: center;
+        }
+        button {
+            font-size: 20px;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #si {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>¿Me amas?</h1>
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+    </div>
+
+    <script>
+        document.getElementById("no").addEventListener("mouseover", function() {
+            const x = Math.random() * (window.innerWidth - this.offsetWidth);
+            const y = Math.random() * (window.innerHeight - this.offsetHeight);
+            this.style.left = `${x}px`;
+            this.style.top = `${y}px`;
+        });
+
+        document.getElementById("si").addEventListener("click", function() {
+            alert("Yo más hermosa ❤️");
+        });
+    </script>
+</body>
+</html>
